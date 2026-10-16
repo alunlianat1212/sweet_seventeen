@@ -1,0 +1,732 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --cream: #fff9f2;
+    --cream-dark: #f7eadf;
+    --pink: #f3c6cc;
+    --pink-dark: #df9fae;
+    --rose: #b85c70;
+    --rose-dark: #8f4055;
+    --brown: #694b4b;
+    --text: #604a4a;
+    --white: #ffffff;
+    --shadow: 0 15px 45px rgba(143, 64, 85, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 10% 10%, #ffe4e7 0, transparent 28%),
+        radial-gradient(circle at 90% 85%, #f6dfcf 0, transparent 30%),
+        var(--cream);
+    overflow-x: hidden;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+    outline: 3px solid var(--rose);
+    outline-offset: 4px;
+}
+
+#birthdayWebsite {
+    position: relative;
+    min-height: 100vh;
+    padding: 40px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.page {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    animation: pageEnter 0.7s ease both;
+}
+
+.page[hidden] {
+    display: none !important;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.birthday-card,
+.content-card {
+    position: relative;
+    width: 100%;
+    padding: 55px 45px;
+    border: 1px solid rgba(223, 159, 174, 0.35);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: var(--shadow);
+    text-align: center;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+}
+
+.birthday-card {
+    padding-top: 65px;
+    padding-bottom: 55px;
+}
+
+.ribbon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: 7px;
+    transform: translateX(-50%);
+    border-radius: 0 0 10px 10px;
+    background: var(--rose);
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    color: var(--rose);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    line-height: 1.8;
+}
+
+h1,
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 200;
+    line-height: 1.25;
+    color: var(--brown);
+}
+
+h1 {
+    max-width: 680px;
+    margin: 0 auto 20px;
+    font-size: clamp(20px, 6vw, 50px);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: clamp(25px, 5vw, 40px);
+}
+
+.highlight {
+    display: block;
+    color: var(--rose);
+    font-style: italic;
+}
+
+.home-subtitle,
+.home-description,
+.section-description,
+.final-message {
+    max-width: 570px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #856d6d;
+}
+
+.home-subtitle {
+    max-width: 460px;
+}
+
+.home-description {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+
+
+.birthday-illustration {
+    position: relative;
+    width: 220px;
+    height: 190px;
+    margin: 25px auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration-gift {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    animation: giftFloat 3s ease-in-out infinite;
+}
+
+
+
+@keyframes giftFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.primary-button {
+    color: var(--white);
+    background: linear-gradient(135deg, var(--rose), var(--rose-dark));
+    box-shadow: 0 8px 20px rgba(184, 92, 112, 0.23);
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(184, 92, 112, 0.3);
+}
+
+.secondary-button {
+    margin-top: 25px;
+    color: var(--rose-dark);
+    background: #fbe8e9;
+    border: 1px solid #f1cbd1;
+}
+
+.secondary-button:hover {
+    transform: translateY(-3px);
+    background: #f7d9df;
+}
+
+.tiny-note {
+    margin-top: 20px;
+    font-size: 11px;
+    color: #b39a9a;
+    letter-spacing: 0.5px;
+}
+
+.content-card {
+    padding: 50px 40px;
+}
+
+.content-card .section-description {
+    margin-bottom: 25px;
+}
+
+
+.welcome-illustration {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 20px auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.polaroid {
+    padding: 12px 12px 18px;
+    background: var(--white);
+    border: 1px solid #f0e4df;
+    box-shadow: 0 8px 22px rgba(105, 75, 75, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.polaroid:hover {
+    z-index: 2;
+    transform: rotate(0) translateY(-6px);
+    box-shadow: 0 15px 30px rgba(105, 75, 75, 0.16);
+}
+
+.polaroid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #f8e9e6;
+    border-radius: 2px;
+}
+
+.polaroid p {
+    margin-top: 13px;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--brown);
+}
+
+.letter-card {
+    position: relative;
+    max-width: 600px;
+    margin: 25px auto 0;
+    padding: 35px;
+    border: 1px solid #e9c7bc;
+    background:
+        linear-gradient(rgba(255, 251, 244, 0.95), rgba(255, 251, 244, 0.95)),
+        repeating-linear-gradient(
+            transparent 0,
+            transparent 31px,
+            #efdcd2 32px
+        );
+    box-shadow: 0 8px 25px rgba(105, 75, 75, 0.08);
+    text-align: left;
+}
+
+.letter-decoration {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 28px;
+    height: 28px;
+    border-top: 2px solid var(--pink-dark);
+    border-right: 2px solid var(--pink-dark);
+}
+
+.letter-content {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    line-height: 2;
+    color: #725858;
+}
+
+.letter-content p {
+    margin-bottom: 18px;
+}
+
+.letter-signature {
+    margin-top: 25px;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.9;
+    color: var(--rose-dark);
+}
+
+.cake-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: 30px 0;
+}
+
+.cake-art {
+    position: relative;
+    width: 260px;
+    height: 250px;
+}
+
+.cake-plate {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    width: 240px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e7c6c6;
+    box-shadow: 0 8px 0 #d7aeae;
+}
+
+.cake-bottom,
+.cake-middle,
+.cake-top {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #c9838e;
+    background: linear-gradient(90deg, #f4c4c9, #ffe5dc, #f4c4c9);
+}
+
+.cake-bottom {
+    bottom: 35px;
+    width: 205px;
+    height: 65px;
+    border-radius: 8px 8px 15px 15px;
+}
+
+.cake-middle {
+    bottom: 95px;
+    width: 170px;
+    height: 55px;
+    border-radius: 8px 8px 12px 12px;
+    background: linear-gradient(90deg, #e7a9b6, #f9d6d5, #e7a9b6);
+}
+
+.cake-top {
+    bottom: 145px;
+    width: 135px;
+    height: 45px;
+    border-radius: 50% 50% 8px 8px / 25% 25% 8px 8px;
+    background: linear-gradient(90deg, #fff0e4, #ffe1d8, #fff0e4);
+}
+
+.cake-candles {
+    position: absolute;
+    z-index: 2;
+    bottom: 185px;
+    left: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+    transform: translateX(-50%);
+}
+
+.candle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.candle-stick {
+    width: 10px;
+    height: 38px;
+    border-radius: 3px;
+    background: repeating-linear-gradient(
+        135deg,
+        #fff7e9 0,
+        #fff7e9 5px,
+        #e8a0ac 5px,
+        #e8a0ac 9px
+    );
+    border: 1px solid #d995a1;
+}
+
+.flame {
+    width: 14px;
+    height: 22px;
+    margin-bottom: 3px;
+    border-radius: 50% 50% 45% 45%;
+    background: linear-gradient(to top, #f1a34a, #ffe8a0);
+    box-shadow: 0 0 15px rgba(255, 187, 91, 0.5);
+    transform-origin: bottom center;
+    animation: flameFlicker 0.7s ease-in-out infinite alternate;
+}
+
+.candle:nth-child(2) .flame {
+    animation-delay: 0.2s;
+}
+
+.candle:nth-child(3) .flame {
+    animation-delay: 0.4s;
+}
+
+@keyframes flameFlicker {
+    from {
+        transform: rotate(-4deg) scale(0.95);
+    }
+
+    to {
+        transform: rotate(4deg) scale(1.05);
+    }
+}
+
+.cake-candles.blown-out .flame {
+    display: none;
+}
+
+.wish-message {
+    min-height: 28px;
+    margin: 5px auto 20px;
+    color: var(--rose-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.final-card {
+    padding-top: 55px;
+    padding-bottom: 50px;
+}
+
+.final-message {
+    margin-top: 15px;
+}
+
+
+.final-cake {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 35px auto 0;
+    object-fit: contain;
+}
+
+.page-navigation {
+    position: fixed;
+    z-index: 10;
+    bottom: 20px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: max-content;
+    max-width: calc(100% - 30px);
+    padding: 10px 15px;
+    border: 1px solid rgba(223, 159, 174, 0.4);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 8px 25px rgba(105, 75, 75, 0.12);
+    transform: translateX(-50%);
+    backdrop-filter: blur(12px);
+}
+
+.nav-button {
+    padding: 8px 12px;
+    border-radius: 30px;
+    background: transparent;
+    color: var(--rose-dark);
+    font-size: 11px;
+    font-weight: 700;
+    transition: background 0.2s ease;
+}
+
+.nav-button:hover:not(:disabled) {
+    background: #fbe8e9;
+}
+
+.nav-button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+#pageIndicator {
+    min-width: 38px;
+    color: #987b7b;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.music-button {
+    position: fixed;
+    z-index: 11;
+    top: 20px;
+    right: 20px;
+    padding: 11px 17px;
+    border: 1px solid #efcbd1;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--rose-dark);
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(105, 75, 75, 0.08);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.music-button:hover {
+    transform: translateY(-2px);
+    background: #fbe8e9;
+}
+
+.confetti-container {
+    position: fixed;
+    z-index: 20;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.confetti {
+    position: absolute;
+    top: -20px;
+    width: 8px;
+    height: 12px;
+    border-radius: 2px;
+    animation: confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    #birthdayWebsite {
+        padding: 75px 14px 100px;
+    }
+
+    .birthday-card,
+    .content-card {
+        padding: 40px 22px;
+        border-radius: 22px;
+    }
+
+    .birthday-card {
+        padding-top: 48px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    h1 {
+        font-size: clamp(32px, 9vw, 43px);
+    }
+
+    h2 {
+        font-size: clamp(27px, 7vw, 35px);
+    }
+
+    .home-subtitle,
+    .home-description,
+    .section-description,
+    .final-message {
+        font-size: 13px;
+    }
+
+    .birthday-illustration {
+        transform: scale(0.9);
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .photo-gallery {
+        gap: 15px;
+    }
+
+    .polaroid {
+        padding: 8px 8px 13px;
+    }
+
+    .polaroid p {
+        font-size: 11px;
+    }
+
+    .letter-card {
+        padding: 27px 20px;
+    }
+
+    .letter-content {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .cake-art {
+        transform: scale(0.9);
+    }
+
+    .page-navigation {
+        bottom: 12px;
+        gap: 5px;
+        padding: 8px 10px;
+    }
+
+    .nav-button {
+        padding: 8px 9px;
+        font-size: 10px;
+    }
+
+    #pageIndicator {
+        min-width: 34px;
+        font-size: 10px;
+    }
+
+    .music-button {
+        top: 12px;
+        right: 12px;
+        padding: 9px 13px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 360px) {
+    .photo-gallery {
+        grid-template-columns: 1fr;
+        max-width: 260px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .page-navigation {
+        gap: 2px;
+    }
+
+    .nav-button {
+        padding: 8px 6px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
